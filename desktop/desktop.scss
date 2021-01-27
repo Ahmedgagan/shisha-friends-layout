@@ -1,0 +1,76 @@
+// Variables
+// *------------------------------------------------*
+$color-slate: #4d4d4d;
+$color-gray: #808080;
+
+$radius-3: 3px;
+$margin-6: 6px;
+
+// Topic list
+// *------------------------------------------------*
+.topic-list {
+  td {
+    padding-bottom: 10px;
+    font-size: 0.8em;
+  }
+  td,
+  .creator a,
+  .editor a {
+    color: $color-gray;
+  }
+  td:first-of-type {
+    padding: 10px 0 10px 10px;
+  }
+  td.star {
+    width: 40px;
+  }
+  td.last-post, th.activity {
+    width: 160px;
+    text-align: right;
+    .relative-date {
+      color: $color-slate;
+    }
+  }
+  .creator, .editor {
+    font-size: 13px;
+    display: block;
+    margin-top: 3px;
+  }
+  .topic-list-item .discourse-tags {
+    margin-right: $margin-6;
+  }
+  .with-year {
+    margin-right: $margin-6;  
+  }
+  button.bulk-select {
+    padding: 5px;
+  }
+  .creator-username {
+    margin-right: $margin-6;
+  }
+  .creator-avatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+  .poster-avatar {
+    width: 15%;
+    float: right;
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+  .poster-info {
+    width: 70%;
+    float: left;
+    text-align: right;
+  }
+  .badge-wrapper.bullet {
+    margin-right: $margin-6;
+  }
+}
+
+// Global avatars
+// *------------------------------------------------*
+img.avatar {
+  border-radius: $radius-3;
+}
