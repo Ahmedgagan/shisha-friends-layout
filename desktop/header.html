@@ -33,9 +33,7 @@
         <a href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">{{topic.creator.username}}</a> 
       </span>
     {{~/if ~}}
-      {{#if showCategory}}
-        {{category-link topic.category}}
-      {{/if}}
+      {{category-link topic.category}}
       <span>{{discourse-tags topic mode="list"}}</span>
 
       <a href={{topic.url}}>{{format-date topic.createdAt format="tiny"}}</a>
@@ -58,17 +56,4 @@
       <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPosterUser imageSize="medium"}}</a>
     </div>
   </td>
-</script>
-
-<script>
-  (function(){
-    var TopicListItemView = require('discourse/components/topic-list-item').default;
-    TopicListItemView.reopen({
-        showCategory: function() {
-            return !this.get('controller.hideCategory') &&
-                    this.get('topic.creator') &&
-                    this.get('topic.category.name') !== 'uncategorized';
-        }.property()
-    });
-  })();
 </script>
