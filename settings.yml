@@ -1,0 +1,4 @@
+svg_icons:
+  default: "far-eye|far-comment-dots"
+  type: "list"
+  list_type: "compact"

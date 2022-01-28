@@ -18,28 +18,28 @@
   {{/if}}
   
   <td class='main-link clearfix'>
-    <div class='creator-avatar'>
-      <a href="/users/{{topic.creator.username}}" data-user-card="{{topic.creator.username}}">{{avatar topic.creator imageSize="large"}}</a>
+    <div class="header">
+      <div class='creator-avatar'>
+        <a href="/users/{{topic.creator.username}}" data-user-card="{{topic.creator.username}}">{{avatar topic.creator imageSize="large"}}</a>
+      </div>
+      {{raw "topic-status" topic=topic}}
+      {{topic-link topic}}
+      {{#if controller.showTopicPostBadges}}
+        {{raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl}}
+      {{/if}}
     </div>
-    {{raw "topic-status" topic=topic}}
-    {{topic-link topic}}
-    {{#if controller.showTopicPostBadges}}
-      {{raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl}}
-    {{/if}}
-    {{raw "list/topic-excerpt" topic=model}}
+    {{raw "list/topic-excerpt" topic=topic}}
     <div class='creator'>
-      {{~#if topic.creator ~}}
-      <span class='creator-username'>
-        <a href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">{{topic.creator.username}}</a> 
-      </span>
-    {{~/if ~}}
       {{category-link topic.category}}
       <span>{{discourse-tags topic mode="list"}}</span>
-
-      <a href={{topic.url}}>{{format-date topic.createdAt format="tiny"}}</a>
       {{#if topic.posts_count}}
         <span class='reply-comment'>
-          {{d-icon "comment"}} {{topic.replyCount}}
+          {{d-icon "far-comment-dots"}} {{topic.replyCount}}
+        </span>
+      {{/if}}
+      {{#if topic.views}}
+        <span class='topic-views'>
+          {{d-icon "far-eye"}} {{topic.views}}
         </span>
       {{/if}}
     </div>
@@ -47,13 +47,7 @@
 
   <td class="last-post">
     <div class='poster-info'>
-      <span class='editor'>
-        <a href="/users/{{topic.last_poster_username}}" data-auto-route="true" data-user-card="{{topic.last_poster_username}}">{{topic.last_poster_username}}</a>
-      </span>
       <a href="{{topic.lastPostUrl}}">{{format-date topic.bumpedAt format="tiny"}}</a>
-    </div>
-    <div class='poster-avatar'>
-      <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPosterUser imageSize="medium"}}</a>
     </div>
   </td>
 </script>

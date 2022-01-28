@@ -31,10 +31,26 @@ $margin-6: 6px;
       color: $color-slate;
     }
   }
+  td.last-post {
+    padding: 10px;
+  }
+  td.main-link .topic-excerpt {
+    font-size: $font-down-2;
+    margin-top: 0;
+  }
+  .main-link .header a.title {
+    padding: 0;
+  }
+  .main-link .header {
+    align-items: center;
+  }
   .creator, .editor {
     font-size: 13px;
     display: block;
     margin-top: 3px;
+  }
+  .creator {
+    margin-top: 1em;
   }
   .topic-list-item .discourse-tags {
     margin-right: $margin-6;
@@ -49,9 +65,14 @@ $margin-6: 6px;
     margin-right: $margin-6;
   }
   .creator-avatar {
-    float: left;
     margin-right: 10px;
-    margin-top: 5px;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 30px;
+      width: 30px;
+    }
   }
   .poster-avatar {
     width: 15%;
@@ -60,17 +81,19 @@ $margin-6: 6px;
     margin-right: 10px;
   }
   .poster-info {
-    width: 70%;
-    float: left;
     text-align: right;
   }
   .badge-wrapper.bullet {
-    margin-right: $margin-6;
+    margin-right: 0.5em;
   }
-}
+  .reply-comment {
+    margin-right: 0.5em;
+  }
+  .header {
+    display: inline-flex;
+  }
 
-// Global avatars
-// *------------------------------------------------*
-img.avatar {
-  border-radius: $radius-3;
+  .topic-statuses {
+    align-self: center;
+  }
 }
