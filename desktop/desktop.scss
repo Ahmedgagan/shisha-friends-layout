@@ -10,23 +10,24 @@ $margin-6: 6px;
 // *------------------------------------------------*
 .topic-list {
   td {
-    padding-bottom: 10px;
     font-size: 0.8em;
   }
-  td,
-  .creator a,
-  .editor a {
-    color: $color-gray;
-  }
+
   td:first-of-type {
-    padding: 10px 0 10px 10px;
+    margin: 1em 0 1em 1em;
+
+    &::before, &::after {
+      display: none;
+    }
   }
+
   td.star {
     width: 40px;
   }
+
   td.last-post, th.activity {
-    width: 160px;
-    text-align: right;
+    width: 15%;
+    text-align: center;
     .relative-date {
       color: $color-slate;
     }
@@ -36,7 +37,7 @@ $margin-6: 6px;
   }
   td.main-link .topic-excerpt {
     font-size: $font-down-2;
-    margin-top: 0;
+    margin-top: 1em;
   }
   .main-link .header a.title {
     padding: 0;
@@ -68,11 +69,6 @@ $margin-6: 6px;
     margin-right: 10px;
     display: flex;
     align-items: center;
-
-    img {
-      height: 30px;
-      width: 30px;
-    }
   }
   .poster-avatar {
     width: 15%;
@@ -81,14 +77,20 @@ $margin-6: 6px;
     margin-right: 10px;
   }
   .poster-info {
-    text-align: right;
+    text-align: center;
   }
   .badge-wrapper.bullet {
     margin-right: 0.5em;
   }
   .reply-comment {
-    margin-right: 0.5em;
+    margin-right: 1em;
   }
+
+  .topic-views, .reply-comment {
+    font-size: 1.3em;
+    font-weight: 300;
+  }
+
   .header {
     display: inline-flex;
   }
